@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(layout="wide", page_title="Produção", page_icon="📃")
 
-st.title(f"Controle da Produção")
+st.title(f"Controle da Produção - EDDI CASA")
 
 
 @st.cache_data
