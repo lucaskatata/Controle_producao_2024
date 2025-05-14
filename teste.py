@@ -69,3 +69,5 @@ if selected:
     df_filtrado_mes
 
 st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
+
+# %%
