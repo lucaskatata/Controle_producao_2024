@@ -64,8 +64,8 @@ col3.metric(
     value=f"{total_mo_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 
-selected = st.checkbox("Ver tabela")
-if selected:
-    df_filtrado_mes
+# selected = st.checkbox("Ver tabela")
+# if selected:
+#     df_filtrado_mes
 
 st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")

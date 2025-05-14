@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(layout="wide", page_title="Produção", page_icon="📃")
 
-st.title(f"Controle da Produção")
+st.title(f"Controle da Produção - EDDI CASA")
 
 
 @st.cache_data
@@ -69,5 +69,3 @@ if selected:
     df_filtrado_mes
 
 st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
-
-# %%
