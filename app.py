@@ -11,7 +11,7 @@ st.title(f"Controle da Produção - EDDI CASA")
 @st.cache_data
 def load_data():
     # dataset = "datasets/CONTROLE DA PRODUCAO E M.O. - 2024.csv"
-    dataset = "datasets/Controle da produção - 2025.csv"
+    dataset = "datasets/Controle da produção.csv"
     df = pd.read_csv(dataset)
     df = df.applymap(lambda x: x.title() if isinstance(x, str) else x)
     columns = df.columns
@@ -70,5 +70,17 @@ col3.metric(
 
 st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
+# %%
+df
+# %%
+df_2025 = pd.read_csv(
+    r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção - 2025.csv"
+)
+df_2025.head(3)
+# %%
+df_sem = pd.read_csv(
+    r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção.csv"
+)
+df_sem.tail(3)
 # %%
 df
