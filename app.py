@@ -64,23 +64,10 @@ col3.metric(
     value=f"{total_mo_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 
-# selected = st.checkbox("Ver tabela")
-# if selected:
-#     df_filtrado_mes
 
 st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
-# %%
-df
-# # %%
-# df_2025 = pd.read_csv(
-#     r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção - 2025.csv"
-# )
-# df_2025.head(3)
-# # %%
-# df_sem = pd.read_csv(
-#     r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção.csv"
-# )
-# df_sem.tail(3)
-# # %%
-# df
+
+selected = st.checkbox("Ver tabela")
+if selected:
+    df_filtrado_mes
