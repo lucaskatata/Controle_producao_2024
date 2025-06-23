@@ -1,11 +1,15 @@
 # %%
 import streamlit as st
 import pandas as pd
-
+from openai import OpenAI
 
 st.set_page_config(layout="wide", page_title="Produção", page_icon="📃")
 
 st.title(f"Controle da Produção - EDDI CASA")
+
+client = OpenAI(
+    api_key="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"
+)
 
 
 @st.cache_data
@@ -26,6 +30,22 @@ df = df.set_index(df["Data"])
 # df = df.drop(columns="Unnamed: 0")
 
 st.session_state["df"] = df
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {
+            "role": "system",
+            "content": f"{df}",
+            "role": "user",
+            "content": f"Você tem acesso ao Dataframe?? {df}",
+        }
+    ],
+)
+
+output_chat = response.choices[0].message.content
+
+st.markdown(output_chat)
 
 anos = df["Ano"].unique()
 ano = st.sidebar.selectbox(
