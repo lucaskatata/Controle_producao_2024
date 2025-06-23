@@ -72,15 +72,15 @@ st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
 # %%
 df
-# %%
-df_2025 = pd.read_csv(
-    r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção - 2025.csv"
-)
-df_2025.head(3)
-# %%
-df_sem = pd.read_csv(
-    r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção.csv"
-)
-df_sem.tail(3)
-# %%
-df
+# # %%
+# df_2025 = pd.read_csv(
+#     r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção - 2025.csv"
+# )
+# df_2025.head(3)
+# # %%
+# df_sem = pd.read_csv(
+#     r"D:\Lucas\GitHub\Controle_producao_2024\datasets\Controle da produção.csv"
+# )
+# df_sem.tail(3)
+# # %%
+# df
