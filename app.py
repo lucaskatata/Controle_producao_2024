@@ -27,12 +27,13 @@ df = df.set_index(df["Data"])
 
 st.session_state["df"] = df
 
-anos = df["Ano"].unique()
-ano = st.sidebar.selectbox(
-    "Ano",
-    anos,
-    placeholder="Selecione o ano",
-)
+# anos = df["Ano"].unique()
+# ano = st.sidebar.selectbox(
+#     "Ano",
+#     anos,
+#     placeholder="Selecione o ano",
+# )
+ano = 2025
 df_filtrador_ano = df[df["Ano"] == ano]
 
 meses = df_filtrador_ano["Mes"].unique()
