@@ -85,10 +85,17 @@ col4.metric(
 valor_bonus = float(df_fechamento_filtrado["Bonus"])
 valor_bonus_formatado = f"R$ {valor_bonus:,.2f}"
 col5.metric(
-    label="Bonus",
+    label="Bônus",
     value=f"{valor_bonus_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 
+resultado = total_mes - valor_fechamento
+resultado_formatado = f"R$ {resultado:,.2f}"
+
+st.metric(
+    label="Resultado",
+    value=f"{resultado_formatado.replace('.','/').replace(',','.').replace('/',',')}",
+)
 
 # st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
