@@ -87,6 +87,7 @@ col5.metric(
     value=f"{valor_bonus_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 
+
 # st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
 
