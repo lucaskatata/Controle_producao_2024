@@ -79,7 +79,7 @@ df_fechamento_filtrado = df_fechamento[df_fechamento["Meses"] == mes]
 valor_fechamento = float(df_fechamento_filtrado["Fechamento"])
 valor_fechamento_formatado = f"R$ {valor_fechamento:,.2f}"
 col4.metric(
-    label="Total Fechamento",
+    label="Total Gasto",
     value=f"{valor_fechamento_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 valor_bonus = float(df_fechamento_filtrado["Bonus"])
