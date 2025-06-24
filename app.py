@@ -33,6 +33,7 @@ st.session_state["df"] = df
 #     anos,
 #     placeholder="Selecione o ano",
 # )
+
 ano = 2025
 df_filtrador_ano = df[df["Ano"] == ano]
 
