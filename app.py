@@ -46,7 +46,7 @@ col1, col2, col3 = st.columns(3)
 total_mes = df_filtrado_mes["Total"].sum()
 total_mes_formatado = f"R$ {total_mes:,.2f}"
 col1.metric(
-    label="Total",
+    label="Total Produção",
     value=f"{total_mes_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
 )
 
@@ -65,9 +65,31 @@ col3.metric(
 )
 
 
-st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
+fechamento_2025 = {
+    "Meses": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
+    "Bonus": [12792.94, 15373.07, 15003.14, 18430.40, 18199.67],
+    "Fechamento": [137077.50, 132699.23, 128244.97, 137904.10, 144273.61],
+}
+df_fechamento = pd.DataFrame(fechamento_2025)
+
+col4, col5, col6 = st.columns(3)
+df_fechamento_filtrado = df_fechamento[df_fechamento["Meses"] == mes]
+valor_fechamento = float(df_fechamento_filtrado["Fechamento"])
+valor_fechamento_formatado = f"R$ {valor_fechamento:,.2f}"
+col4.metric(
+    label="Total Fechamento",
+    value=f"{valor_fechamento_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
+)
+valor_bonus = float(df_fechamento_filtrado["Bonus"])
+valor_bonus_formatado = f"R$ {valor_bonus:,.2f}"
+col5.metric(
+    label="Bonus",
+    value=f"{valor_bonus_formatado.replace('.', '-').replace(',','.').replace('-', ',')}",
+)
+
+# st.bar_chart(df_filtrado_mes["Total"], x_label="Data", y_label="Total")
 
 
-selected = st.checkbox("Ver tabela")
-if selected:
-    df_filtrado_mes
+# selected = st.checkbox("Ver tabela")
+# if selected:
+#     df_filtrado_mes
