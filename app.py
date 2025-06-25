@@ -35,11 +35,11 @@ st.session_state["df"] = df
 # )
 
 ano = 2025
-df_filtrador_ano = df[df["Ano"] == ano]
+# df_filtrador_ano = df[df["Ano"] == ano]
 
-meses = df_filtrador_ano["Mes"].unique()
+meses = df["Mes"].unique()
 mes = st.sidebar.selectbox("Mes", meses, placeholder="Selecione o mês")
-df_filtrado_mes = df_filtrador_ano[df_filtrador_ano["Mes"] == mes]
+df_filtrado_mes = df[df["Mes"] == mes]
 
 st.header(f"{mes} {ano}")
 
