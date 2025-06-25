@@ -70,7 +70,7 @@ col3.metric(
 fechamento_2025 = {
     "Meses": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
     "Bonus": [12792.94, 15373.07, 15003.14, 18430.40, 18199.67],
-    "Fechamento": [137077.50, 132699.23, 128244.97, 137904.10, 144273.61],
+    "Fechamento": [135727.50, 131557.98, 127245.84, 136547.75, 142877, 91],
 }
 df_fechamento = pd.DataFrame(fechamento_2025)
 
