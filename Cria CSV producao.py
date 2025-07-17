@@ -170,11 +170,10 @@ for c in diretorio_arquivo.iterdir():
             )
         else:
             df_mao_de_obra = criar_df_mao_de_obra(c, df_diario_mao_de_obra)
-
 df = merge(df_producao_interna, df_mao_de_obra, diretorio_arquivo)
 
+# %%
 pasta_destino = Path(r"D:\Trabalho - Eddi\Controle de Produção - 2025\Mensal")
-
 
 df.to_csv(
     pasta_destino / f"Controle da produção - {retorna_mes(diretorio_arquivo)} 2025.csv",
@@ -183,7 +182,7 @@ df.to_csv(
 )
 
 df_final = concatena_meses(pasta_destino)
-df_final['Ano'] = df_final['Data'].dt.year
+df_final["Ano"] = df_final["Data"].dt.year
 # %%
 df_final.to_csv(
     Path(r"D:\Trabalho - Eddi\Controle de Produção - 2025")
@@ -207,4 +206,8 @@ df.to_excel(
     index=False,
 )
 # %%
-df_final
+df = df.reset_index()
+df
+# %%
+df["Data"] = df["Data"].str.replace("/", "-")
+df
